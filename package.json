@@ -5,7 +5,10 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint ./src --cache",
+    "clean:android": "rm -rf node_modules android/.gradle android/app/build android/app/.cxx android/build $TMPDIR/react-*",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "check": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\" && eslint ./src --cache ",
     "start": "react-native start",
     "test": "jest"
   },
@@ -30,8 +33,10 @@
     "react-native-error-boundary": "^3.1.0",
     "react-native-mmkv": "^4.3.1",
     "react-native-nitro-modules": "^0.35.9",
+    "react-native-reanimated": "^4.4.1",
     "react-native-safe-area-context": "^5.5.2",
-    "react-native-screens": "^4.25.2"
+    "react-native-screens": "^4.25.2",
+    "react-native-worklets": "^0.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
