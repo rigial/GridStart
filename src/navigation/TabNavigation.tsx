@@ -53,6 +53,7 @@ export default function TabNavigation() {
         name="game"
         component={Game}
         options={{
+          headerShown: false,
           tabBarLabel: 'Race',
           tabBarIcon: ({ color, size }) =>
             renderIconHelper({ color, name: 'flag-checkered', size }),

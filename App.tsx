@@ -14,7 +14,7 @@ import Root from './src/Root';
 function App() {
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={'light-content'} />
+      <StatusBar barStyle={'light-content'} hidden={true} animated={true} showHideTransition="fade" />
       <Root />
     </SafeAreaProvider>
   );
