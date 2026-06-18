@@ -1,7 +1,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
-  onboarding: undefined;
+  Onboarding: undefined;
+  Main: undefined;
   game: undefined;
   leaderboard: undefined;
   settings: undefined;

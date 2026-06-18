@@ -8,8 +8,14 @@ import {
 import React from 'react';
 import { GoogleIcon, OnboardingBackgroundImage } from '../../constants/image';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../navigation/types';
 
 export default function Onboarding() {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <ImageBackground
       source={OnboardingBackgroundImage}
@@ -29,7 +35,10 @@ export default function Onboarding() {
           />
           <Text style={styles.signGoogleButtonText}>Sign in with Google</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.guestButton}>
+        <TouchableOpacity
+          style={styles.guestButton}
+          onPress={() => navigation.navigate('Main')}
+        >
           <Text style={styles.guestButtonText}>Continue as Guest</Text>
         </TouchableOpacity>
         <Text style={styles.versionText}>{'v0.0.1-beta'}</Text>
